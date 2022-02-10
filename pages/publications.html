@@ -301,32 +301,80 @@
                   6-10, 2010; 865</p>
       </section>
 	  
-      <section id="three">
-        <h2>Contact Me</h2>
-        <p>Please leave your message here.</p>
-        <form id="input-form" action="" method="post" target="no-target">
-          <div class="row gtr-uniform">
-            <div class="col-6 col-12-xsmall"><input name="name" id="input-q0" placeholder="Name" type="text"></div>
-            <div class="col-6 col-12-xsmall"><input name="email" id="input-q1" placeholder="Email" type="email"></div>
-            <div class="col-12"><input name="subject" id="input-q2" placeholder="Subject" type="text"></div>
-            <div class="col-12"><textarea name="message" id="input-q3" placeholder="Message" rows="6"></textarea></div>
-            <div class="col-12">
-              <ul class="actions">
-                <li><input class="primary" value="Send Message" id="form-submit" type="submit"></li>
-                <li><input value="Reset Form" type="reset"></li>
-              </ul>
-            </div>
-          </div>
-        </form>
-      </section>
-</div>
+          <!-- Five -->
+          <section id="five">
+            <div class="container">
+              <h3>Contact Me</h3>
+              <p>Please leave your message here.</p>
+              <form id="input-form" action="" method="post" target="no-target">
+                <div class="row gtr-uniform">
+                  <div class="col-6 col-12-xsmall"><input name="name" id="input-q0"
 
+                      placeholder="Name" type="text"></div>
+                  <div class="col-6 col-12-xsmall"><input name="email" id="input-q1"
+
+                      placeholder="Email" type="email"></div>
+                  <div class="col-12"><input name="subject" id="input-q2" placeholder="Subject"
+
+                      type="text"></div>
+                  <div class="col-12"><textarea name="message" id="input-q3" placeholder="Message"
+
+rows="6"></textarea></div>
+                  <div class="col-12">
+                    <ul class="actions">
+                      <li><input class="primary" value="Send Message" id="form-submit"
+
+                          type="submit"></li>
+                      <li><input value="Reset Form" type="reset"></li>
+                    </ul>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+</div>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script> </div>
+      <script>
+      var total_ques = 4;
+
+      $('#input-form').one('submit',function(){
+      var inputp = new Array();
+      for  (i = 0; i < total_ques ; i++) { 
+        inputp[i] = encodeURIComponent($('#input-q'+i).val()); 
+      }
+      var submitURL = 'https://docs.google.com/forms/d/13EGwAvhbyo6NSdXVUcnEfmKCzsTLCW1pYuWaTAPUx-I/formResponse?';
+      var submitRef = 'submit=Submit';
+
+      var qID = ["entry.2041041075","entry.714672371","entry.1506895643","entry.885988312"];
+
+
+
+      for (i = 0; i < total_ques ; i++) { 
+        submitURL =(submitURL + qID[i] + "=" + inputp[i] + "&" ); 
+      }
+      submitURL = (submitURL + submitRef);
+      console.log(submitURL);
+      $(this)[0].action=submitURL;
+
+
+      });
+
+  </script> </div>
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
         <ul class="icons">
           <li><a href="https://github.com/EvaYHChu" class="icon fa-github"><span class="label">Github</span></a></li>
           <li><a href="https://www.researchgate.net/profile/Ying-Hua_Chu" class="icon fa-researchgate"><span class="label">researchgate</span></a></li>
+	  <li><a href="#five" class="icon fa-envelope"><span class="label">Email</span></a></li>
         </ul>
         <ul class="copyright">
           <li>All rights reserved.</li>
